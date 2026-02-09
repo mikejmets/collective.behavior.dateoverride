@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+  
+  <!-- Boolean index for the override flag -->
+  <index name="event_date_override" meta_type="BooleanIndex">
+    <indexed_attr value="event_date_override"/>
+  </index>
+  
+  <!-- FieldIndex for the override text (for searching) -->
+  <index name="event_date_override_text" meta_type="FieldIndex">
+    <indexed_attr value="event_date_override_text"/>
+  </index>
+  
+  <!-- Metadata columns for retrieval without waking up objects -->
+  <column value="event_date_override"/>
+  <column value="event_date_override_text"/>
+  
+</object>

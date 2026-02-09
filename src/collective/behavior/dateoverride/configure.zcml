@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="collective.behavior.dateoverride">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+
+  <!-- Include sub-packages -->
+  <include package=".behaviors" />
+  <include package=".browser" />
+
+  <!-- GenericSetup profile -->
+  <genericsetup:registerProfile
+      name="default"
+      title="Event Date Override Behavior"
+      directory="profiles/default"
+      description="Adds ability to override event date display with custom text"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="srf.reports (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the Date Overrride behavior add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <!-- Upgrade steps -->
+  <include file="upgrades.zcml" />
+
+</configure>

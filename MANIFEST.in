@@ -1,0 +1,3 @@
+graft src/collective/behavior/dateoverride
+include *.md
+global-exclude *.pyc

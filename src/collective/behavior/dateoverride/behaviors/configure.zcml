@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+    <plone:behavior
+        title="Event Date Override"
+        description="Adds fields to override event date display"
+        provides=".dateoverride.IEventDateOverride"
+        factory="plone.dexterity.schema.DexteritySchemaPolicy"
+        marker=".dateoverride.IEventDateOverride"
+        />
+
+    <!-- Register indexers for catalog -->
+    <adapter
+        name="event_date_override"
+        factory=".indexers.event_date_override_indexer"
+        />
+    
+    <adapter
+        name="event_date_override_text"
+        factory=".indexers.event_date_override_text_indexer"
+        />
+
+</configure>

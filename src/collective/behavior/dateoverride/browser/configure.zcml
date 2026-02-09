@@ -1,0 +1,6 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Browser views can be added here if needed -->
+
+</configure>
